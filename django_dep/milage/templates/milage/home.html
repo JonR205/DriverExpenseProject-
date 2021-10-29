@@ -4,5 +4,9 @@
     <title></title>
 </head>
 <body>
-<h1>Enter future home page here</body>
+    {%for post in posts%}
+        <h1>{{ post.title }}<h1>
+        <p>By {{post.driver}} on {{post.date_driven}}</p>
+        <p>{{post.miles}}</p>    
+    {%endfor%}
 </html>
