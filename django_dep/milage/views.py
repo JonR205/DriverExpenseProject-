@@ -23,4 +23,4 @@ def home(request):
     return render(request,'milage/home.html', context)
 
 def about(request):
-    return render(request,'milage/about.html')
+    return render(request,'milage/about.html', {'title': 'About'})

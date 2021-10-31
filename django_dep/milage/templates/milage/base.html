@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+    {%if title%}
+        <title> Django milage - {{title}}</title>
+        {% else %}
+            <title></title>
+        {% endif %}
+</head>
+<body>
+    {%block content %}{% endblock %}    
+</html>

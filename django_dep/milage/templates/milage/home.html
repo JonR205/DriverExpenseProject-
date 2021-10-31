@@ -1,12 +1,8 @@
-<!doctype html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+{%extends "milage/base.html" %}
+{% block content %}
     {%for post in posts%}
         <h1>{{ post.title }}<h1>
         <p>By {{post.driver}} on {{post.date_driven}}</p>
-        <p>{{post.miles}}</p>    
+        <p>{{post.miles}}</p>
     {%endfor%}
-</html>
+{% endblock content %}
