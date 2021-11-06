@@ -1,8 +1,8 @@
-{%extends "milage/base.html" %}
+{% extends "milage/base.html" %}
 {% block content %}
     {%for post in posts%}
-        <h1>{{ post.title }}<h1>
-        <p>By {{post.driver}} on {{post.date_driven}}</p>
-        <p>{{post.miles}}</p>
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.driver }} on {{ post.date_driven }}</p>
+        <p>{{ post.miles }}</p>
     {%endfor%}
 {% endblock content %}
