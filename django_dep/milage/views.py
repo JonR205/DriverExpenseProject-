@@ -1,24 +1,11 @@
 from django.shortcuts import render
-# Create your views here.
+from .models import Post
 
-posts = [
-    {
-        'driver': 'JonathanR',
-        'title' : 'Miles Driven',
-        'miles': '136',
-        'date_driven': 'October 27 2021'
-    },
-    {
-        'driver': 'JonathanR',
-        'title' : 'Miles Driven',
-        'miles': '143',
-        'date_driven': 'October 28 2021'
-    }
-]
+# Create your views here.
 
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request,'milage/home.html', context, )
 
