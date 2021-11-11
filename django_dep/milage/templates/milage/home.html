@@ -3,6 +3,6 @@
     {%for post in posts%}
         <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
         <p>By {{ post.author }} on {{ post.date_driven|date:"F d, Y" }}</p>
-        <p>Milage {{ post.content }}</p>
+        <p>Milage {{ post.miles }}</p>
     {%endfor%}
 {% endblock content %}
