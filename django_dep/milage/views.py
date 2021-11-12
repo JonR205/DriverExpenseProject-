@@ -7,6 +7,7 @@ from django.views.generic import (
     CreateView
 )
 from .models import Post
+from .forms import PostMilageForm
 
 # Create your views here.
 
@@ -30,12 +31,19 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'miles', 'date_driven']
+    form_class = PostMilageForm
+    template_name = 'milage/post_form.html'
+    # fields = ['title', 'miles', 'date_driven']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
     
+
+# def post(request):
+#     form = PostMilageForm(request.POST)
+#     return render(request, 'milage/post_form.html', {'form': form})
+
 
 def about(request):
     return render(request,'milage/about.html', {'title': 'About'})
